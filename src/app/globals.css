@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+:root {
+  --color-accent: #F95C4B;
+  --color-bg: #E4DED2;
+  --color-surface: #F5F4F0;
+  --text-secondary: #393835;
+  --text-primary: #000000;
+
+  --font-head: var(--font-lato);
+  --font-body: var(--font-teachers);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-accent: #F95C4B;
+    --color-bg: #000000;
+    --color-surface: #393835;
+    --text-secondary: #E4DED2;
+    --text-primary: #F5F4F0;
+  }
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+}
