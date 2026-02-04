@@ -26,3 +26,17 @@ body {
   color: var(--text-primary);
   font-family: var(--font-body);
 }
+
+.first-button {
+  background-color: var(--color-accent);
+  color: var(--text-primary);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-family: var(--font-head);
+  border: none;
+}
+
+.first-button:hover {
+  background-color: darken(var(--color-accent), 10%);
+  cursor: pointer;
+}
