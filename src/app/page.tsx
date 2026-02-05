@@ -7,10 +7,9 @@ export default function Home() {
     <div>
       <main>
         <h1>Welcome to Next.js!</h1>
-        <AnimatedArrowBtn>get fashionable</AnimatedArrowBtn>
+        <AnimatedArrowBtn />
         <HeartBtn />
         <StandardBtn>Continue</StandardBtn>
-
       </main>
     </div>
   );
