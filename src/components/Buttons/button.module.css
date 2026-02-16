@@ -166,13 +166,13 @@
   align-items: center;
   justify-content: center;
 
-  background: var(--color-bg);
+  background: oklch(97% 0.001 106.424 / 0.8);
   padding: 0.5rem;
   border: none;
   border-radius: 100%;
   cursor: pointer;
 
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color-accent);
 
   transition: color 0.5s ease;

@@ -23,9 +23,9 @@ export default function AsideNav() {
   return (
     <>
       {/* Desktop Sidebar */}
-      <aside className="hidden md:flex fixed left-0 top-0 h-screen w-60 flex-col p-2 gap-2" style={{ background: "var(--color-surface)" }}>
+      <aside className="hidden md:flex fixed left-0 top-0 h-screen w-60 flex-col p-2 gap-2 z-50" style={{ background: "var(--color-surface)" }}>
         <div className="flex items-center justify-center">
-            <Image src="/images/logo.svg" alt="Logo" width={150} height={150} />
+            <Image src="/images/logo.svg" alt="Logo" loading="eager" width={150} height={150} />
         </div>
 
         <nav className="flex flex-col gap-2">
@@ -53,7 +53,7 @@ export default function AsideNav() {
       </aside>
 
       {/* Mobile Bottom Nav */}
-      <nav className="md:hidden fixed bottom-0 left-0 right-0 flex justify-around py-2" style={{ background: "var(--color-surface)" }}>
+      <nav className="md:hidden fixed bottom-0 left-0 right-0 flex justify-around py-2 z-50" style={{ background: "var(--color-surface)" }}>
         {navItems.map(({ name, href, icon: Icon }) => {
           const active = pathname === href;
 

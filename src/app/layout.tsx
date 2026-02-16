@@ -15,7 +15,7 @@ const teachers = Teachers({
 });
 
 export const metadata: Metadata = {
-  title: "Mercaro",
+  title: "Mercado",
   description: "Online shop for all your needs",
 };
 
