@@ -2,23 +2,14 @@
 
 :root {
   --color-accent: #F95C4B;
-  --color-bg: #E4DED2;
-  --color-surface: #F5F4F0;
-  --text-secondary: #393835;
-  --text-primary: #000000;
+  --color-bg: oklch(92.3% 0.003 48.717);
+  --color-surface: oklch(97% 0.001 106.424);
+  --text-muted: oklch(55.3% 0.013 58.071);
+  --text-secondary: oklch(21.6% 0.006 56.043);
+  --text-primary: oklch(14.7% 0.004 49.25);
 
   --font-head: var(--font-lato);
   --font-body: var(--font-teachers);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-accent: #F95C4B;
-    --color-bg: #000000;
-    --color-surface: #393835;
-    --text-secondary: #E4DED2;
-    --text-primary: #F5F4F0;
-  }
 }
 
 body {
