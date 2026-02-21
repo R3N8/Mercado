@@ -1,16 +1,15 @@
 import CategoryCarousel from "@/components/CatCarousel";
 import AsideNav from "@/components/Nav";
 import ProductList from "@/components/ProductList";
+import Footer from "@/components/Footer";
 import Link from "next/link";
-import { FaTruckFast } from "react-icons/fa6";
+import { FaTruckFast, FaArrowRightLong } from "react-icons/fa6";
 import { GiPayMoney } from "react-icons/gi";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import { FaArrowRightLong } from "react-icons/fa6";
-
 
 export default function Index() {
   return (
-    <main className="grid grid-cols-1 md:grid-cols-[minmax(220px,auto)_1fr] gap-6 p-4">
+    <main className="grid grid-cols-1 md:grid-cols-[minmax(220px,auto)_1fr] gap-6 p-4 pb-24 md:pb-4">
       {/* Aside will only take as much width as its content */}
       <aside>
         <AsideNav />
@@ -25,7 +24,7 @@ export default function Index() {
         </article>
 
         <article>
-          <div className="flex flex-col items-center justify-center w-full"> 
+          <div className="flex flex-col items-start justify-center w-full"> 
             <h1 className="text-2xl lowercase first-letter:uppercase font-bold mb-4 tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>why shop with us?</h1>
 
             <div className="flex items-center justify-between md:justify-around w-full">
@@ -69,6 +68,10 @@ export default function Index() {
             <Link href="/products" className="flex items-center gap-1.5 font-bold hover:underline" style={{fontFamily: "var(--font-teachers)", color: "var(--color-accent)"}}>View all <FaArrowRightLong /></Link>
           </div>
           <ProductList limit={6} />
+        </article>
+
+        <article>
+          <Footer />
         </article>
       </section>
     </main>

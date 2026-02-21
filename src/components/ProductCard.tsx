@@ -80,13 +80,13 @@ export default function ProductCard({ product }: ProductCardProps) {
           "
         >
           <div className="text-sm">{renderStars(product.rating)}</div>
-          <p className="text-sm line-clamp-2">
+          <p className="text-sm line-clamp-2" style={{fontFamily: "var(--font-lato)"}}>
             {product.description}
           </p>
         </div>
 
         {/* HEADER */}
-        <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 justify-between var(--font-teachers)">
+        <div className="absolute bottom-4 left-4 right-4 flex items-center gap-2 justify-between tracking-widest" style={{fontFamily: "var(--font-teachers)"}}>
           <h2 className="font-bold text-sm md:text-lg truncate">{product.title}</h2>
           {hasDiscount ? (
             <h2 className="font-bold text-sm md:text-lg" style={{ color: "var(--color-accent)" }}>

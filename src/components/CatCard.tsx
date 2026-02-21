@@ -13,8 +13,8 @@ export default function CategoryCard({ category, isActive = false }: Props) {
   return (
     <Link
       href={`/products/${category.slug}`}
-      className="group relative w-full h-80 md:h-150 overflow-hidden rounded-md p-6 flex items-center justify-between min-h-60 transition-colors duration-300"
-      style={{ background: "var(--color-surface)", color: "var(--text-primary)" }}
+      className="group relative w-full h-80 md:h-150 overflow-hidden rounded-md p-6 flex items-center justify-between min-h-60 transition-colors duration-300 tracking-widest"
+      style={{ background: "var(--color-surface)", color: isActive ? "var(--color-surface)" : "var(--text-primary)", fontFamily: "var(--font-teachers)" }}
       data-active={isActive}
     >
       {/* Background Image */}
