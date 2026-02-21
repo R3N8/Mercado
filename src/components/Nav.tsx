@@ -3,15 +3,14 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { FaHome, FaSearch, FaRegUserCircle  } from "react-icons/fa";
+import { FaHome, FaRegUserCircle  } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { PiSealPercentFill } from "react-icons/pi";
-
-
+import { TbShoppingBag } from "react-icons/tb";
 
 const navItems = [
     { name: "Home", href: "/index", icon: FaHome },
-    { name: "Search", href: "/search", icon: FaSearch },
+    { name: "Products", href: "/products", icon: TbShoppingBag },
     { name: "Deals", href: "/deals", icon: PiSealPercentFill },
     { name: "Cart", href: "/cart", icon: FaCartShopping },
     { name: "Contact", href: "/contact", icon: FaRegUserCircle },

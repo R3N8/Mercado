@@ -2,12 +2,18 @@
 
 import { useEffect, useState } from "react";
 import { Product } from "@/types/index";
-import { fetchAllProducts } from "@/utils/api/index";
+import { fetchAllProducts } from "@/lib/api/index";
 import ProductCard from "@/components/ProductCard";
 
-export default function ProductList() {
+type ProductListProps = {
+  limit?: number;
+};
+
+export default function ProductList({ limit }: ProductListProps) {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
+
+  const displayedProducts = limit ? products.slice(0, limit) : products;
 
   useEffect(() => {
     fetchAllProducts()
@@ -19,7 +25,7 @@ export default function ProductList() {
 
   return (
     <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
-      {products.map(product => <ProductCard key={product.id} product={product} />)}
+      {displayedProducts.map(product => <ProductCard key={product.id} product={product} />)}
     </div>
   );
 }
