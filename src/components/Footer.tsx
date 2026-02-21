@@ -5,7 +5,6 @@ import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 const navItems = [
   { name: "Home", href: "/index" },
   { name: "Products", href: "/products" },
-  { name: "Deals", href: "/deals" },
   { name: "Cart", href: "/cart" },
   { name: "Contact", href: "/contact" },
 ];
