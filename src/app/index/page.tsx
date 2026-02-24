@@ -67,7 +67,7 @@ export default function Index() {
             <h1 className="text-2xl capitalize font-bold mb-4 tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>featured products</h1>
             <Link href="/products" className="flex items-center gap-1.5 font-bold hover:underline" style={{fontFamily: "var(--font-teachers)", color: "var(--color-accent)"}}>View all <FaArrowRightLong /></Link>
           </div>
-          <ProductList limit={6} />
+          <ProductList />
         </article>
 
         <article>
