@@ -38,9 +38,9 @@
 
   padding: 0.6rem 1.5rem;
   border-radius: 999px;
-  border: 2px solid var(--text-primary);
 
-  background: transparent;
+  background: var(--text-primary);
+  color: var(--color-surface);
   cursor: pointer;
 }
 
@@ -76,7 +76,7 @@
   position: absolute;
   left: 2.5rem;
   top: 50%;
-  color: var(--text-primary);
+  color: var(--color-surface);
   
   /* Start offscreen - no transform here to avoid conflicts */
   opacity: 0;
@@ -106,7 +106,7 @@
   transform: translate(-50%, -50%);
   
   opacity: 0;
-  color: var(--text-primary);
+  color: var(--color-surface);
   transition: opacity 0.3s ease;
   white-space: nowrap;
 }
