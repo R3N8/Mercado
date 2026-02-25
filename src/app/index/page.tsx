@@ -1,3 +1,5 @@
+"use client";
+
 import CategoryCarousel from "@/components/CatCarousel";
 import AsideNav from "@/components/Nav";
 import ProductList from "@/components/ProductList";
@@ -6,8 +8,20 @@ import Link from "next/link";
 import { FaTruckFast, FaArrowRightLong } from "react-icons/fa6";
 import { GiPayMoney } from "react-icons/gi";
 import { RiSecurePaymentFill } from "react-icons/ri";
+import { FaBell } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
+import SearchBar from "@/components/SearchBar";
+import { useEffect, useState } from "react";
+import { fetchAllProducts } from "@/lib/api";
+import { Product } from "@/types";
+import { TbBackground } from "react-icons/tb";
+import { BaseBtn } from "@/components/Buttons/BaseBtn";
 
 export default function Index() {
+  const [products, setProducts] = useState<Product[]>([]);
+  useEffect(() => {
+    fetchAllProducts().then((data) => setProducts(data.data));
+  }, []);
   return (
     <main className="grid grid-cols-1 md:grid-cols-[minmax(220px,auto)_1fr] gap-6 p-4 pb-24 md:pb-4">
       {/* Aside will only take as much width as its content */}
@@ -19,13 +33,19 @@ export default function Index() {
       <section className="w-full flex flex-col gap-12">
         <article>
           <div>
+            <SearchBar products={products}/>
+          </div>
+        </article>
+
+        <article>
+          <div>
             <CategoryCarousel />
           </div>
         </article>
 
         <article>
           <div className="flex flex-col items-start justify-center w-full"> 
-            <h1 className="text-2xl lowercase first-letter:uppercase font-bold mb-4 tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>why shop with us?</h1>
+            <h1 className="text-2xl lowercase first-letter:uppercase font-bold mb-2 tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>why shop with us?</h1>
 
             <div className="flex items-center justify-between md:justify-around w-full">
               <div 
@@ -63,9 +83,11 @@ export default function Index() {
         </article>
 
         <article>
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl capitalize font-bold mb-4 tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>featured products</h1>
-            <Link href="/products" className="flex items-center gap-1.5 font-bold hover:underline" style={{fontFamily: "var(--font-teachers)", color: "var(--color-accent)"}}>View all <FaArrowRightLong /></Link>
+          <div className="flex items-center justify-between w-full mb-2">
+            <h1 className="text-2xl capitalize font-bold tracking-wider" style={{fontFamily: "var(--font-teachers)", color: "var(--text-secondary)"}}>featured products</h1>
+            <Link href="/products">
+              <p className="flex items-center gap-1.5 font-bold hover:underline" style={{fontFamily: "var(--font-teachers)", color: "var(--color-accent)"}}>View all <FaArrowRightLong /></p>
+            </Link>
           </div>
           <ProductList />
         </article>
