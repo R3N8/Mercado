@@ -23,7 +23,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
       {/* IMAGE */}
       <div>
-        <Link href={`/products/${product.id}`}>
+        <Link href={`/product/${product.id}`}>
             <div className="relative w-full h-60 md:h-80">
                 <Image
                     src={product.image.url}
