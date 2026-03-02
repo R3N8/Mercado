@@ -8,6 +8,7 @@ import { renderStars } from "@/utils/renderStars";
 import { FaUser } from "react-icons/fa";
 import BackBtn from "@/components/Buttons/BackBtn";
 import { HeartBtn } from "@/components/Buttons/LikeBtn";
+import AddToCartButton from "@/components/Buttons/AddToCartBtn";
 
 
 export default function ProductPage({ id }: { id: string }) {
@@ -21,9 +22,9 @@ export default function ProductPage({ id }: { id: string }) {
 
   if (!product) return <p>Product not found</p>;
 
-  const { discountedPrice, discountPercent, hasDiscount } = calculateDiscount(
+  const discountInfo = calculateDiscount(
     product.price,
-    product.discountedPrice
+    product.discountedPrice ?? product.price
   );
 
   return (
@@ -44,7 +45,7 @@ export default function ProductPage({ id }: { id: string }) {
         </div>
 
         {/* INFO */}
-        <div className="flex flex-col gap-4 p-2">
+        <div className="flex flex-col gap-4 p-4 w-full">
           <div className="flex items-center justify-between md:hidden">
             {/* Tags */}
             <div className="flex flex-wrap gap-2">
@@ -76,16 +77,21 @@ export default function ProductPage({ id }: { id: string }) {
             <div>{renderStars(product.rating)}</div>
           </div>
           <div className="flex items-center gap-3 text-xl font-bold">
-            {hasDiscount && <span className="line-through" style={{color: "var(--text-muted)"}}>${product.price.toFixed(2)}</span>}
-            <span style={{color: "var(--text-primary)"}}>${discountedPrice.toFixed(2)}</span>
+            {discountInfo.hasDiscount && <span className="line-through" style={{color: "var(--text-muted)"}}>${product.price.toFixed(2)}</span>}
+            <span style={{color: "var(--text-primary)"}}>${discountInfo.discountedPrice.toFixed(2)}</span>
           </div>
           <p className="tracking-wide font-semibold" style={{color: "var(--text-muted)", fontFamily: "var(--font-lato)"}}>{product.description}</p>
-
           
-
-          <button className="mt-4 bg-black text-white py-3 rounded-lg hover:opacity-80 transition">
-            Add to Cart
-          </button>
+          <div className="flex items-center justify-center">
+            <AddToCartButton
+              id={product.id}
+              image={product.image}
+              title={product.title}
+              price={product.price}
+              discount={discountInfo.discountPercent}
+            />
+          </div>
+          
 
           {/* REVIEWS */}
           <div className="pt-12 pb-24 md:pb-0">

@@ -34,3 +34,12 @@ export interface ProductsResponse {
     totalCount: number;
   };
 }
+
+export interface CartItem {
+  id: string;
+  image: Image;
+  title: string;
+  price: number;
+  quantity: number;
+  discount?: number;
+}

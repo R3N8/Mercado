@@ -1,9 +1,10 @@
-export default function Checkout() {
+"use client";
+
+export default function CheckoutSuccess() {
   return (
-    <div>
-      <main>
-        <h1>Successful Checkout Page!</h1>
-      </main>
+    <div className="p-6 text-center">
+      <h1 className="text-3xl font-bold mb-4">Checkout Successful!</h1>
+      <p>Thank you for your purchase. Your cart has been cleared.</p>
     </div>
   );
 }

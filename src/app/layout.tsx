@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Lato, Teachers } from "next/font/google";
 import "./globals.css";
+import Providers from "@/components/Providers";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -19,17 +20,13 @@ export const metadata: Metadata = {
   description: "Online shop for all your needs",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body
-        className={`${lato.variable} ${teachers.variable} antialiased`}
-      >
-        {children}
+      <body>
+        <Providers>
+          {children} {/* Now all children can use useCart() */}
+        </Providers>
       </body>
     </html>
   );
