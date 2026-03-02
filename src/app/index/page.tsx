@@ -8,14 +8,10 @@ import Link from "next/link";
 import { FaTruckFast, FaArrowRightLong } from "react-icons/fa6";
 import { GiPayMoney } from "react-icons/gi";
 import { RiSecurePaymentFill } from "react-icons/ri";
-import { FaBell } from "react-icons/fa";
-import { FiLogOut } from "react-icons/fi";
 import SearchBar from "@/components/SearchBar";
 import { useEffect, useState } from "react";
 import { fetchAllProducts } from "@/lib/api";
 import { Product } from "@/types";
-import { TbBackground } from "react-icons/tb";
-import { BaseBtn } from "@/components/Buttons/BaseBtn";
 
 export default function Index() {
   const [products, setProducts] = useState<Product[]>([]);
