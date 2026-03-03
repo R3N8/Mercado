@@ -85,7 +85,7 @@ export default function Index() {
               <p className="flex items-center gap-1.5 font-bold hover:underline" style={{fontFamily: "var(--font-teachers)", color: "var(--color-accent)"}}>View all <FaArrowRightLong /></p>
             </Link>
           </div>
-          <ProductList />
+          <ProductList products={products} />
         </article>
 
         <article>

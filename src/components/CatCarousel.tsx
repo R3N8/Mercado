@@ -9,7 +9,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import CategoryCard from "@/components/CatCard";
-import { categories } from "@/lib/config/category";
+import { categories } from "@/lib/config/heroCategories";
 
 export default function CategoryCarousel() {
   const containerRef = useRef<HTMLDivElement | null>(null);

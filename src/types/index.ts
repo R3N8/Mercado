@@ -43,3 +43,13 @@ export interface CartItem {
   quantity: number;
   discount?: number;
 }
+
+export type CategoryFilter = "electronics" | "beauty" | "clothes";
+
+export type SortOption = "price-low" | "price-high" | "none";
+
+export interface ProductFilters {
+  selectedCategories: string[];
+  showDeals: boolean;
+  sortBy: SortOption;
+}
