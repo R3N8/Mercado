@@ -15,7 +15,7 @@ import Link from "next/link";
 
 export const AnimatedArrowBtn = () => {
     return (
-      <Link href="/index">
+      <Link href="/home">
         <BaseBtn 
         className={styles.cartBtn}
         >

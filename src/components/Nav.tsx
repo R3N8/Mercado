@@ -8,7 +8,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { TbShoppingBag } from "react-icons/tb";
 
 const navItems = [
-    { name: "Home", href: "/index", icon: FaHome },
+    { name: "Home", href: "/home", icon: FaHome },
     { name: "Products", href: "/products", icon: TbShoppingBag },
     { name: "Cart", href: "/cart", icon: FaCartShopping },
     { name: "Contact", href: "/contact", icon: FaRegUserCircle },

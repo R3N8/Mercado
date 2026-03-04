@@ -2,7 +2,7 @@ import Link from "next/link";
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const navItems = [
-  { name: "Home", href: "/index" },
+  { name: "Home", href: "/home" },
   { name: "Products", href: "/products" },
   { name: "Cart", href: "/cart" },
   { name: "Contact", href: "/contact" },
