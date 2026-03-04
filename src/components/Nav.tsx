@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useCart } from "@/context/CartContext";
 import { FaHome, FaRegUserCircle  } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbShoppingBag } from "react-icons/tb";
@@ -16,6 +17,8 @@ const navItems = [
 
 export default function AsideNav() {
   const pathname = usePathname();
+  const { getTotalQuantity } = useCart();
+  const cartQuantity = getTotalQuantity();
 
   return (
     <>
@@ -33,7 +36,7 @@ export default function AsideNav() {
               <Link
                 key={name}
                 href={href}
-                className={`flex items-center gap-3 px-3 py-2 rounded-lg transition`}
+                className={`relative flex items-center gap-3 px-3 py-2 rounded-lg transition`}
                 style={{
                     background: active ? "var(--color-bg)" : "transparent",
                     color: active ? "var(--color-primary)" : "var(--text-muted)",
@@ -43,6 +46,14 @@ export default function AsideNav() {
               >
                 <Icon size={20} />
                 <span>{name}</span>
+                {name === "Cart" && cartQuantity > 0 && (
+                  <span
+                    className="absolute top-0 left-0 flex items-center justify-center rounded-full text-xs font-bold"
+                    style={{ backgroundColor: "var(--color-accent)", color: "var(--text-primary)", fontFamily: "var(--font-teachers)", width: 20, height: 20 }}
+                  >
+                    {cartQuantity}
+                  </span>
+                )}
               </Link>
             );
           })}
@@ -69,6 +80,14 @@ export default function AsideNav() {
             >
               <Icon size={22} />
               <span>{name}</span>
+              {name === "Cart" && cartQuantity > 0 && (
+                <span
+                  className="absolute -top-1 -right-1 flex items-center justify-center rounded-full text-xs font-bold"
+                  style={{ backgroundColor: "var(--color-accent)", color: "var(--text-primary)", fontFamily: "var(--font-teachers)", width: 18, height: 18 }}
+                >
+                  {cartQuantity}
+                </span>
+              )}
             </Link>
           );
         })}
