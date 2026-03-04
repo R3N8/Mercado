@@ -8,7 +8,7 @@ The goal of Mercado is to create a realistic e-commerce experience while followi
 
 ## Links
 
-Deploy: [Mercaro](https://mercado-kappa-flame.vercel.app/index)
+Deploy: [Mercado](https://mercado-kappa-flame.vercel.app/index)
 
 API: [Noroff Online-Shop API](https://docs.noroff.dev/docs/v2/basic/online-shop)
 

@@ -1,4 +1,5 @@
 import { AnimatedArrowBtn } from "@/components/Buttons/CartBtn";
+import Link from 'next/link';
 
 export default function Welcome() {
   return (
@@ -17,6 +18,7 @@ export default function Welcome() {
             <p className="first-letter:uppercase lowercase text-lg">discover amazing products and enjoy seamless shopping experience.</p>
           </div>
           <div>
+            <Link href="/index">Go to Home</Link>
             <AnimatedArrowBtn />
           </div>
         </section>
