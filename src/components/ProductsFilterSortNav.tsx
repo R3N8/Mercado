@@ -22,14 +22,28 @@ export default function SubNav({ filters, setFilters }: Props) {
     >
       <div>
         <Button
-          onClick={() => setFilters({ selectedCategories: [], showDeals: false, sortBy: "none" })}
+          onClick={() =>
+            setFilters(prev => ({
+              ...prev,
+              selectedCategories: [],
+              showDeals: false,
+              sortBy: "none",
+            }))
+          }
           active={isDefaultActive}
         >
           default
         </Button>
 
         <Button
-          onClick={() => setFilters({ selectedCategories: [], showDeals: true, sortBy: "none" })}
+          onClick={() =>
+            setFilters(prev => ({
+              ...prev,
+              selectedCategories: [],
+              showDeals: true,
+              sortBy: "none",
+            }))
+          }
           active={isDealsActive}
         >
           deals
