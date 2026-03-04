@@ -1,3 +1,4 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Lato, Teachers } from "next/font/google";
 import "./globals.css";
@@ -23,9 +24,12 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>
+      <body className={`${lato.variable} ${teachers.variable}`}>
+        {/* Wrap children in a div to ensure hydration */}
         <Providers>
-          {children} {/* Now all children can use useCart() */}
+          <div id="app-wrapper">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

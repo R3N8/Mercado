@@ -1,5 +1,3 @@
-"use client";
-
 import CategoryCarousel from "@/components/CatCarousel";
 import AsideNav from "@/components/Nav";
 import ProductList from "@/components/ProductList";
