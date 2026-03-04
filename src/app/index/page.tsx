@@ -1,4 +1,3 @@
-"use client";
 import CategoryCarousel from "@/components/CatCarousel";
 import AsideNav from "@/components/Nav";
 import ProductList from "@/components/ProductList";
@@ -8,15 +7,13 @@ import { FaTruckFast, FaArrowRightLong } from "react-icons/fa6";
 import { GiPayMoney } from "react-icons/gi";
 import { RiSecurePaymentFill } from "react-icons/ri";
 import SearchBar from "@/components/SearchBar";
-import { useEffect, useState } from "react";
 import { fetchAllProducts } from "@/lib/api";
 import { Product } from "@/types";
 
-export default function Index() {
-  const [products, setProducts] = useState<Product[]>([]);
-  useEffect(() => {
-    fetchAllProducts().then((data) => setProducts(data.data));
-  }, []);
+export default async function Index() {
+  const data = await fetchAllProducts();
+  const products: Product[] = data.data;
+
   return (
     <main className="grid grid-cols-1 md:grid-cols-[minmax(220px,auto)_1fr] gap-6 p-4 pb-24 md:pb-4">
       {/* Aside will only take as much width as its content */}
