@@ -82,7 +82,7 @@ export default function SearchBar({ products, placeholder }: SearchBarProps) {
             <div
             key={product.id}
             className="px-4 py-2 hover:bg-stone-300 cursor-pointer flex items-center gap-2"
-            onClick={() => router.push(`/product/id/${product.id}`)}
+            onClick={() => router.push(`/product/${product.id}`)}
             >
             <img
                 src={
