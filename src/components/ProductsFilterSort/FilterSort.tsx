@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { ProductFilters } from "@/types";
+import { Product, ProductFilters } from "@/types";
 import { HiSelector, HiCheck, HiSortAscending, HiSortDescending } from "react-icons/hi";
 
 interface Props {

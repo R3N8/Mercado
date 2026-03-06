@@ -1,3 +1,5 @@
+import { Product } from "@/types";
+
 export interface DiscountInfo {
   discountedPrice: number;
   discountPercent: number;
@@ -16,4 +18,9 @@ export function calculateDiscount(price: number, discountedPrice: number): Disco
     discountPercent,
     hasDiscount,
   };
+}
+
+export function getSortPrice(product: Product) {
+  return product.discountedPrice  < product.price
+  ? product.discountedPrice : product.price;
 }

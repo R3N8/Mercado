@@ -1,5 +1,6 @@
 import { Product, ProductFilters } from "@/types";
 import { FILTER_CATEGORY_CONFIG } from "@/lib/config/filterCategories";
+import { getSortPrice } from "./priceDiscount";
 
 export function applyProductFilters(
     products: Product[],
@@ -27,11 +28,11 @@ export function applyProductFilters(
 
   // sorting
   if (filters.sortBy === "price-low") {
-      result.sort((a, b) => a.price - b.price);
+      result.sort((a, b) => getSortPrice(a) - getSortPrice(b));
   }
 
   if (filters.sortBy === "price-high") {
-      result.sort((a, b) => b.price - a.price);
+      result.sort((a, b) => getSortPrice(b) - getSortPrice(a));
   }
 
   return result;
