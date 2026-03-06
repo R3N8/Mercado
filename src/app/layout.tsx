@@ -1,8 +1,9 @@
-// app/layout.tsx
-import type { Metadata } from "next";
+"use client";
+
 import { Lato, Teachers } from "next/font/google";
-import "./globals.css";
 import Providers from "@/components/Providers";
+import BagLoader from "@/components/Loader/Loader";
+import "./globals.css";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -16,20 +17,13 @@ const teachers = Teachers({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Mercado",
-  description: "Online shop for all your needs",
-};
-
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className={`${lato.variable} ${teachers.variable}`}>
-        {/* Wrap children in a div to ensure hydration */}
         <Providers>
-          <div id="app-wrapper">
-            {children}
-          </div>
+          <BagLoader />
+          <div id="app-wrapper">{children}</div>
         </Providers>
       </body>
     </html>

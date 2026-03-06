@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&display=swap');
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  z-index: 9999;
+}
+
+.bagBody {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 200;
+  stroke-dashoffset: 200;
+  animation: drawBody 2.2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+.bagHandle {
+  fill: none;
+  stroke: var(--color-accent);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 46;
+  stroke-dashoffset: 46;
+  animation: drawHandle 2.2s cubic-bezier(0.6, 0, 0.4, 1) infinite;
+}
+
+@keyframes drawBody {
+  0%   { stroke-dashoffset: 200;  opacity: 0.15; }
+  10%  { opacity: 1; }
+  45%  { stroke-dashoffset: 0;    opacity: 1; }
+  55%  { stroke-dashoffset: 0;    opacity: 1; }
+  90%  { opacity: 0.15; }
+  100% { stroke-dashoffset: -200; opacity: 0.15; }
+}
+
+@keyframes drawHandle {
+  0%   { stroke-dashoffset: 46;  }
+  5%   { stroke-dashoffset: 46;  }
+  40%  { stroke-dashoffset: 0;   }
+  60%  { stroke-dashoffset: 0;   }
+  100% { stroke-dashoffset: -46; }
+}
+
+.label {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: 0.85rem;
+  letter-spacing: 0.18em;
+  color: #5a5652;
+  animation: textFade 2.2s ease-in-out infinite;
+}
+
+@keyframes textFade {
+  0%, 100% { opacity: 0.3; }
+  50%       { opacity: 1; }
+}
