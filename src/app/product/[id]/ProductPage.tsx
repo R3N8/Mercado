@@ -13,14 +13,21 @@ import AddToCartButton from "@/components/Buttons/AddToCartBtn";
 
 export default function ProductPage({ id }: { id: string }) {
   const [product, setProduct] = useState<Product | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    setLoading(true);
+    setError(null);
+
     fetchProductById(id)
-      .then(setProduct)
-      .catch(() => setProduct(null));
+      .then((data) => setProduct(data))
+      .catch(() => setError("Product not found."))
+      .finally(() => setLoading(false));
   }, [id]);
 
-  if (!product) return <p>Product not found</p>;
+  if (loading) return <p className="text-center mt-8 font-semibold" style={{ color: "var(--text-primary)", fontFamily: "var(--font-lato)" }}>Loading product...</p>;
+  if (error || !product) return <p className="text-center mt-8 font-semibold" style={{ color: "var(--text-muted)", fontFamily: "var(--font-lato)" }}>{error ?? "Product not found."}</p>;
 
   const discountInfo = calculateDiscount(
     product.price,

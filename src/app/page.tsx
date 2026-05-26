@@ -21,7 +21,7 @@ export default function Welcome() {
         <div className="md:w-auto flex flex-col items-center gap-6 bg-stone-100/30 p-4 rounded-lg text-center"
         style={{color: "var(--color-surface)", fontFamily: "var(--font-teachers)"}}>
           <h1 className="text-2xl md:text-5xl font-bold">
-            Welcome to <span className="capitalize" style={{color: "var(--color-accent)"}}>Mercaro</span>
+            Welcome to <span className="capitalize" style={{color: "var(--color-accent)"}}>Mercado</span>
           </h1>
           <p className="text-md md:text-xl">
             Discover amazing products and enjoy a seamless shopping experience

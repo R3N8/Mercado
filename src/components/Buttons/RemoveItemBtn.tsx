@@ -3,8 +3,9 @@
 import { useCart } from "@/context/CartContext";
 import { useToast } from "@/context/ToastContext";
 import { FaTrashCan } from "react-icons/fa6";
+import { CartItem } from "@/types";
 
-export default function RemoveItemBtn({ item }: { item: any }) {
+export default function RemoveItemBtn({ item }: { item: CartItem }) {
   const { removeFromCart } = useCart();
   const { showToast } = useToast();
 
@@ -14,10 +15,12 @@ export default function RemoveItemBtn({ item }: { item: any }) {
   };
 
   return (
-    <button 
-    type="button" 
-    onClick={handleRemove} 
-    className="p-1.5 rounded-full opacity-80 bg-red-100 text-red-600 hover:scale-105 cursor-pointer transition-transform">
+    <button
+      type="button"
+      aria-label={`Remove ${item.title} from cart`}
+      onClick={handleRemove}
+      className="p-1.5 rounded-full opacity-80 bg-red-100 text-red-600 hover:scale-105 cursor-pointer transition-transform"
+    >
       <FaTrashCan />
     </button>
   );
