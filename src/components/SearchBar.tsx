@@ -72,7 +72,7 @@ export default function SearchBar({ products, placeholder }: SearchBarProps) {
 
     {showResults && filtered.length > 0 && (
         <div
-        className="absolute left-0 top-full z-[9999] w-full mt-2 max-h-64 overflow-y-auto rounded-lg shadow-xl border"
+        className="absolute left-0 top-full z-9999 w-full mt-2 max-h-64 overflow-y-auto rounded-lg shadow-xl border"
         style={{
             background: "var(--color-surface)",
             color: "var(--text-primary)",
