@@ -17,9 +17,7 @@ const nextConfig: NextConfig = {
         hostname: "another-domain.com",
       },
     ],
-    // Alternatively, you can specify domains directly:
-    domains: ["images.pexels.com", "static.noroff.dev", "another-domain.com"],
-  },
+  }
 };
 
 export default nextConfig;

@@ -103,16 +103,19 @@ export default function CartPage() {
               />
 
               <div className="flex items-center gap-2">
-                <DecreaseBtn
-                  item={{
-                    id: product.id,
-                    title: product.title,
-                    price: product.price,
-                    image: product.image,
-                    quantity: product.quantity,
-                    discount: discountInfo.discountPercent,
-                  }}
-                />
+                {product.quantity > 1 && (
+                  <DecreaseBtn
+                    item={{
+                      id: product.id,
+                      title: product.title,
+                      price: product.price,
+                      image: product.image,
+                      quantity: product.quantity,
+                      discount: discountInfo.discountPercent,
+                    }}
+                  />
+                )}
+
                 <p className="font-semibold" style={{ color: "var(--text-primary)", fontFamily: "var(--font-lato)" }}>
                   {product.quantity}
                 </p>

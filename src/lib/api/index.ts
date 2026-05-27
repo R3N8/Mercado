@@ -10,9 +10,16 @@ function getApiBase(): string {
 }
 
 export async function fetchAllProducts(): Promise<ProductsResponse> {
-  const res = await fetch(getApiBase());
-  if (!res.ok) throw new Error("Failed to fetch products");
-  return res.json() as Promise<ProductsResponse>;
+  const url = getApiBase();
+  const res = await fetch(url);
+
+  if (!res.ok) {
+    const text = await res.text();
+    console.error("RESPONSE BODY:", text);
+    throw new Error("Failed to fetch products");
+  }
+
+  return res.json();
 }
 
 export async function fetchProductById(id: string): Promise<Product> {

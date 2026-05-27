@@ -49,6 +49,7 @@ export default function ProductList({ products }: Props) {
         <button
           onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
           disabled={currentPage === 1}
+          className="cursor-pointer"
         >
           <FaLongArrowAltLeft />
         </button>
@@ -66,6 +67,7 @@ export default function ProductList({ products }: Props) {
         <button
           onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}
           disabled={currentPage === totalPages}
+          className="cursor-pointer"
         >
           <FaLongArrowAltRight />
         </button>

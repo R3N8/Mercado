@@ -7,6 +7,7 @@ import { useCart } from "@/context/CartContext";
 import { FaHome, FaRegUserCircle  } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { TbShoppingBag } from "react-icons/tb";
+import { useEffect, useState } from "react";
 
 const navItems = [
     { name: "Home", href: "/home", icon: FaHome },
@@ -18,7 +19,13 @@ const navItems = [
 export default function AsideNav() {
   const pathname = usePathname();
   const { getTotalQuantity } = useCart();
-  const cartQuantity = getTotalQuantity();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const cartQuantity = mounted ? getTotalQuantity() : 0;
 
   return (
     <>
